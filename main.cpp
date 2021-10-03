@@ -111,25 +111,35 @@ int main()
     // Use function at to replace the middle element with 100.
     // (Notice that the at function returns a reference.)
 
+    v3.at(2) = 100;
 
     // Call the function printVector to print v3.
 
+    cout << "v3.at(2) = 100: ";
+    printVector(v3);
 
     // vector (const vector& x);
     // Use the copy constructor to create a new vector v4 with the
     // same elements of v3.
 
+    vector<int> v4(v3);
 
     // Call the function printVector to print v4.
 
+    cout << "vector<int> v4(v3): ";
+    printVector(v4);
 
     // Create an iterator iterVector4 to point to
     // the first element of v4.
 
+    vector<int>::iterator iterVector4 = v4.begin();
+    cout << "begin iterator v4: " << *iterVector4 << endl;
 
     // Create an iterator iterVector2 to point to
     // the second element of v2.
 
+    vector<int>::iterator iterVector2 = v4.begin() + 1;
+    cout << "iterator to the second location v4: " << *iterVector2 << endl;
 
     // iterator insert (const_iterator position,
     //                    InputIterator first, InputIterator last);
@@ -140,8 +150,12 @@ int main()
     // ignore it.
 
 
-    // Call the function printVector to print v4.
+    v4.insert(v4.begin(), v2.begin()+1, v2.begin()+4);
 
+
+    // Call the function printVector to print v4.
+    cout << "v4.insert(v4.begin(), v2.begin()+1, v2.begin()+4): ";
+    printVector(v4);
 
     // iterator insert (const_iterator position,
     //                   size_type n, const value_type& val);
@@ -149,9 +163,11 @@ int main()
     // (Notice that the insert function returns an iterator,
     //  but if we do not intend to use it, we can ignore it.)
 
+    v4.insert(v4.end(), 3, 0);
 
     // Call the function printVector to print v4.
-
+    cout << "v4.insert(v4.end(), 3, 0): ";
+    printVector(v4);
 
     // bool empty() const noexcept;
     // const_reference back() const;
