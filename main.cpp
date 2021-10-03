@@ -24,7 +24,12 @@ int main()
     // Use function push_back to insert the following values
     // in v1: 12, 73, 41, 38, 25, 56, an 63 in this order.
     v1.push_back(12);
-    v1.push_back(73); //...
+    v1.push_back(73);
+    v1.push_back(41);
+    v1.push_back(38);
+    v1.push_back(25);
+    v1.push_back(56);
+    v1.push_back(62);
 
     // size_type size() const noexcept;
     // Create a variable of type int named sizeV1 and store
@@ -33,54 +38,74 @@ int main()
     // Make sure you cast the return value of the function
     // size to the appropriate type.
 
+    size_t sizeV1{v1.size()};
+    cout << "size() of vector: " << sizeV1 << endl;
 
     // Use a FOR loop to print out the vector.
     // Do NOT use an iterator.
 
+    for (size_t i{0}; i < sizeV1; ++i)
+    {
+        cout << v1[i] << " ";
+    }
+    cout << endl;
 
     //void clear() noexcept;
     // Call the function clear on vector v1.
 
+    v1.clear();
 
     // size_type size() const noexcept;
     // Call function size to print the size of v1.
 
+    cout << "v1.clear(): " << v1.size() << endl;
 
     // size_type capacity() const noexcept;
     // Call function capacity to output the capacity of v1.
 
+    cout << "v1.capacity(): " << v1.capacity() << endl;
 
     // Create an array of integers containing:
     // 10,11,12,13,14,15,16,17,18,19
 
+    int a[] = {10,11,12,13,14,15,16,17,18,19};
 
     // Use the default constructor to declare an integer vector v2.
 
+    vector<int> v2;
 
     // void assign (InputIterator first, InputIterator last);
     // Use function assign to copy elements 12, 13, 14, 15, and
     // 16 from the array into v2.
     // One statement only.
 
+    v2.assign(a+2, a+7);
 
     // Call the function printVector to print v2.
 
+    cout << "v2.assign(a+2, a+7): ";
+    printVector(v2);
 
     // const_reference back() const;
     // Use the function back output the last element in the vector
     // (Notice that the back function returns a reference.)
 
+    cout << "v2.back(): " << v2.back() << endl;
 
     // Use the default constructor to declare an integer vector v3.
 
+    vector<int> v3;
 
     // void assign (size_type n, const value_type& val);
     // Use function assign to insert the values 7, 7, 7, 7, and 7.
     // One statement only.
 
+    v3.assign(5, 7);
 
     // Call the function printVector  to print v3.
 
+    cout << "v3.assign(5, 7): ";
+    printVector(v3);
 
     // const_reference at(size_type n) const;
     // Use function at to replace the middle element with 100.
